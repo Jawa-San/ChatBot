@@ -1,0 +1,96 @@
+body {
+    padding-bottom: 56px; /* Adjusted for Bootstrap fixed navbar */
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+#toggle-chat-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#chat-container {
+    background-color: #f0f0f0;
+    display: none;
+    text-align: center;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 300px;
+    height: 400px; /* Fixed height for the chat container */
+    overflow: hidden; /* Hide overflow content */
+    transition: max-height 0.3s ease-out;
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+#chat-content {
+    max-height: calc(100% - 150px); /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+#user-input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+#send-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+.chat-message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px; /* Rounded corners for the chat bubbles */
+    display: block; /* Each message will be on a new line */
+    word-wrap: break-word; /* Allow words to break onto the next line if needed */
+    width: fit-content;
+    word-break: break-word;
+    max-width: 80%; /* Adjust as necessary to set the maximum width of a chat bubble */
+    min-height: 20px; /* Adjust as needed to ensure minimum height is maintained */
+}
+
+/* Style for user and bot messages */
+.user-message {
+    background-color: #007bff;
+    color: #fff;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 10px;
+    clear: both;
+    padding: 10px; /* Adjust padding to ensure text is not too close to the edges */
+}
+
+.bot-message {
+    background-color: #b2e0b2;
+    color: #000;
+    text-align: left;
+    margin-right: auto;
+    margin-left: 10px;
+    clear: both;
+    padding: 10px; /* Adjust padding to ensure text is not too close to the edges */
+}
+
+#chat-container.show {
+    display: block;
+}
